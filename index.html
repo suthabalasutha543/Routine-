@@ -1,7 +1,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" href="icon-192.png">
 
-<link rel="manifest" href='data:application/manifest+json,{"name":"Daily Routine Tracker","short_name":"Routine","start_url":"./index.html","display":"standalone","background_color":"%230e1517","theme_color":"%230e1517","icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"}]}'>
+<link rel="manifest" href='data:application/manifest+json,{"name":"Daily Routine Tracker","short_name":"Routine","start_url":"./index.html","display":"standalone","background_color":"%230e1517","theme_color":"%230e1517"}'>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@
 <link rel="icon" href="icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#eef3f3;--card:#fff;--ink:#14252a;--mute:#5d7378;--line:#d5e0e1;--acc:#d96b0b;--acc2:#0f8f84;--soft:#e4eeee;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#eef3f3;--card:#fff;--ink:#14252a;--mute:#5d7378;--line:#d5e0e1;--acc:#d96b0b;--acc2:#0f8f84;--soft:#e4eeee;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1517;--card:#162126;--ink:#e8f1f2;--mute:#8aa3a8;--line:#25353b;--acc:#f2a54a;--acc2:#34c4b5;--soft:#1d2c32;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0e1517;--card:#162126;--ink:#e8f1f2;--mute:#8aa3a8;--line:#25353b;--acc:#f2a54a;--acc2:#34c4b5;--soft:#1d2c32;color-scheme:dark}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -76,14 +76,14 @@ input[type=range]{padding:0;accent-color:var(--acc2);width:100%}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .mute{color:var(--mute);font-size:13px}
 .num{font:800 22px "Bricolage Grotesque",sans-serif}
-nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:center;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));z-index:5}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:center;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));z-index:20}
 nav div{display:flex;max-width:640px;width:100%;gap:4px}
 nav button{flex:1;border:0;background:none;color:var(--mute);padding:7px 0;border-radius:14px;font-weight:700;font-size:12px;cursor:pointer}
 nav button span{display:block;font-size:20px}
 nav button.sel{background:var(--soft);color:var(--ink)}
-#toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:700;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+#toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:700;opacity:0;transition:.2s ease}
 #toast.show{opacity:1;transform:translateX(-50%)}
-.more-wrap{display:flex;justify-content:flex-end;margin:6px 0;position:relative}.more-wrap details{position:relative}.more-wrap summary{list-style:none;cursor:pointer;font-size:24px;padding:2px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card)}.more-menu{position:absolute;right:0;top:40px;z-index:10;width:210px;padding:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px #0003}.more-menu button{display:block;width:100%;margin:4px 0;text-align:left}.reminder-inline{margin-top:12px;padding:12px;background:var(--soft);border-radius:14px}.skill-nav{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px}.skill-task{display:flex;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}.skill-task input{width:20px;height:20px;accent-color:var(--acc2)}.money-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.money-grid label{display:grid;gap:5px;color:var(--mute);font-size:12px}.money-grid input{width:100%}.more-menu button{border:0;border-radius:10px;padding:9px;background:var(--soft);color:var(--ink);font-weight:700;cursor:pointer}
+.more-wrap{display:flex;justify-content:flex-end;margin:6px 0;position:relative}.more-wrap details{position:relative}.more-wrap summary{list-style:none;cursor:pointer;font-size:24px;padding:2px 12px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -105,53 +105,53 @@ var DEF={plan:{meals:[
 {n:"Lunch",t:"1:00 PM",i:["120 g chicken breast (raw weight)","150 g cooked rice","150 g vegetables","Curd 100 g"]},
 {n:"Snack",t:"4:30 PM",i:["1 apple or guava","150 g low-fat curd","Black coffee or tea without sugar"]},
 {n:"Dinner",t:"7:30 PM",i:["120 g chicken or fish (raw weight)","150 g sweet potato","150 g vegetables"]}],
-supps:["Whey protein (after gym)","Creatine 3 g","Multivitamin","Omega-3"],water:10,cardio:30,
-split:[{f:"Legs and glutes",e:["Squats 4x10","Romanian deadlift 4x10","Hip thrust 4x12","Lunges 3x12"]},
-{f:"Upper body",e:["Bench press 4x10","Lat pulldown 4x10","Shoulder press 3x12","Rows 3x12"]},
-{f:"Cardio and core",e:["Plank 3x45s","Leg raises 3x15","Russian twists 3x20"]},
-{f:"Lower body",e:["Leg press 4x12","Leg curl 3x12","Glute bridge 4x15","Calf raises 4x15"]},
-{f:"Upper body",e:["Incline press 4x10","Pull-ups or assisted 3x8","Lateral raise 3x15","Curls and triceps 3x12"]},
-{f:"Full body",e:["Deadlift 3x8","Goblet squat 3x12","Push-ups 3x12","Farmer carry 3x40m"]},
-{f:"Rest day",e:["Stretching 15 min","Walk 20 min"]}]},
-days:{},
-skills:[["DevOps","Linux and Bash",20],["DevOps","Docker",10],["DevOps","Kubernetes",0],["DevOps","CI/CD with GitHub Actions",0],["DevOps","Terraform",0],
-["AI","Python for AI",30],["AI","LLM APIs and RAG",15],["AI","Prompt engineering",25],
-["Data Engineering","Advanced SQL",40],["Data Engineering","PySpark",5],["Data Engineering","Airflow",0],["Data Engineering","dbt",0],["Data Engineering","Kafka basics",0]].map(function(a){return{c:a[0],n:a[1],p:a[2],h:0}}),
-money:{sip:6000,rd:12500,paid:{},extra:[],exp:[],budget:20000}};
+ supps:["Whey protein (after gym)","Creatine 3 g","Multivitamin","Omega-3"],water:10,cardio:30,
+ split:[{f:"Legs and glutes",e:["Squats 4x10","Romanian deadlift 4x10","Hip thrust 4x12","Lunges 3x12"]},
+ {f:"Upper body",e:["Bench press 4x10","Lat pulldown 4x10","Shoulder press 3x12","Rows 3x12"]},
+ {f:"Cardio and core",e:["Plank 3x45s","Leg raises 3x15","Russian twists 3x20"]},
+ {f:"Lower body",e:["Leg press 4x12","Leg curl 3x12","Glute bridge 4x15","Calf raises 4x15"]},
+ {f:"Upper body",e:["Incline press 4x10","Pull-ups or assisted 3x8","Lateral raise 3x15","Curls and triceps 3x12"]},
+ {f:"Full body",e:["Deadlift 3x8","Goblet squat 3x12","Push-ups 3x12","Farmer carry 3x40m"]},
+ {f:"Rest day",e:["Stretching 15 min","Walk 20 min"]}]},
+ days:{},
+ skills:[["DevOps","Linux and Bash",20],["DevOps","Docker",10],["DevOps","Kubernetes",0],["DevOps","CI/CD with GitHub Actions",0],["DevOps","Terraform",0],
+ ["AI","Python for AI",30],["AI","LLM APIs and RAG",15],["AI","Prompt engineering",25],
+ ["Data Engineering","Advanced SQL",40],["Data Engineering","PySpark",5],["Data Engineering","Airflow",0],["Data Engineering","dbt",0],["Data Engineering","Kafka basics",0]].map(function(a){return[a[0],a[1],a[2]]}),
+ money:{sip:6000,rd:12500,paid:{},extra:[],exp:[],budget:20000}};
 var S;try{S=JSON.parse(localStorage.getItem(K))}catch(e){}
 S=S||DEF;
 S.money=S.money||DEF.money;S.money.months=S.money.months||{};S.skillTasks=S.skillTasks||{};
 if(!S.v){
 var X=function(f,a){return{f:f,e:a}};
 S.plan.split=[
-X("Chest + Triceps ★",["Barbell bench press 3 × 6–8","Incline dumbbell press 3 × 8–12","Machine chest press 2 × 10–12","Cable fly 3 × 12–15","Rope triceps pushdown 3 × 10–12","Overhead triceps extension 2 × 12–15"]),
-X("Back + Biceps",["Lat pulldown 3 × 8–12","Chest-supported row 3 × 8–12","Seated cable row 2 × 10–12","Straight-arm pulldown 2 × 12–15","EZ-bar curl 3 × 10–12","Hammer curl 2 × 12"]),
-X("Shoulders + Abs ★",["Seated dumbbell shoulder press 3 × 8–10","Dumbbell lateral raises 4 × 12–15","Cable lateral raises 3 × 12–15","Reverse pec deck 3 × 12–15","Cable crunch 3 × 15","Hanging knee raises 3 × 12","Plank 3 × 45 sec"]),
+X("Chest + Triceps ★",["Barbell bench press 3 × 6–8","Incline dumbbell press 3 × 8–12","Machine chest press 2 × 10–12","Cable fly 3 × 12–15","Rope triceps pushdown 3 × 10–12","Overhead triceps extension 2 × 10–12"]),
+X("Back + Biceps",["Lat pulldown 3 × 8–12","Chest-supported row 3 × 8–12","Seated cable row 2 × 10–12","Straight-arm pulldown 2 × 12–15","EZ-bar curl 3 × 10–12","Hammer curl 2 × 10–12"]),
+X("Shoulders + Abs ★",["Seated dumbbell shoulder press 3 × 8–10","Dumbbell lateral raises 4 × 12–15","Cable lateral raises 3 × 12–15","Reverse pec deck 3 × 12–15","Cable crunch 3 × 15","Plank 3 × 45 s"]),
 X("Legs",["Squats 3 × 8–10","Romanian deadlift 3 × 8–10","Leg press 3 × 10–12","Leg curl 3 × 12","Leg extension 2 × 12–15","Calf raises 3 × 15"]),
-X("Chest + Shoulders ★",["Incline barbell press 3 × 8–10","Flat dumbbell press 3 × 10–12","Pec deck fly 2 × 12–15","Machine shoulder press 2 × 10–12","Cable lateral raises 3 × 12–15","Rear delt cable fly 2 × 15"]),
+X("Chest + Shoulders ★",["Incline barbell press 3 × 8–10","Flat dumbbell press 3 × 10–12","Pec deck fly 2 × 12–15","Machine shoulder press 2 × 10–12","Cable lateral raises 3 × 12–15","Push-ups 2 × 12"]),
 X("Cardio + Recovery",["Incline treadmill 25–30 min","Brisk walking 20 min","Light mobility and stretching"]),
-X("Rest day",["Complete rest"])];
+X("Rest day",["Complete rest"])]
 var Z=function(c,a){return a.map(function(t){return{c:c,n:t,p:0,h:0}})};
 S.skills=[].concat(
-Z("Phase 1 · Python, SQL, Linux",["Wk 1–4 · Python basics: data types, collections, functions, modules, exceptions","Wk 5 · OOP, classes, inheritance, file handling","Wk 6 · APIs, JSON, requests, virtual environments, Git","Wk 7 · SQL joins, aggregations, subqueries, CTEs","Wk 8 · Window functions, indexes, query plans, Linux, Bash","Project 1 · Data extraction and storage system (API to PostgreSQL)"]),
-Z("Phase 2 · Big data engineering",["Wk 9 · Big data concepts, Hadoop, HDFS","Wk 10 · Spark architecture, SparkSession, DataFrames","Wk 11 · Transformations, actions, Spark SQL","Wk 12 · Joins, partitioning, caching, shuffling","Wk 13 · ETL, ELT, data warehouse, dimensional modeling","Wk 14 · Kafka topics, producers, consumers","Wk 15 · Airflow DAGs, operators, scheduling","Wk 16 · Parquet, Delta Lake, data quality","Project 2 · End-to-end pipeline (Kafka, PySpark, Delta, Airflow)"]),
-Z("Phase 3 · AWS data engineering",["Wk 17 · Cloud basics, AWS account, IAM, security","Wk 18 · S3, EC2, VPC, networking","Wk 19 · Lambda, CloudWatch, EventBridge","Wk 20 · AWS CLI, Boto3, Python automation","Wk 21 · Glue, Data Catalog, crawlers","Wk 22 · Athena, Redshift","Wk 23 · EMR, Spark on AWS, MSK concepts","Wk 24 · AWS architecture, security, cost optimization","Project 3 · AWS data lake (S3, Glue, Athena, Redshift)"]),
-Z("Phase 4 · DevOps",["Wk 25 · Linux administration, Bash scripting","Wk 26 · Git, GitHub, branching, pull requests","Wk 27 · Docker, Dockerfile, images, containers","Wk 28 · Docker Compose, GitHub Actions","Wk 29 · Kubernetes architecture, pods, deployments","Wk 30 · Services, ConfigMaps, Secrets, Helm","Wk 31 · Terraform providers, variables, state","Wk 32 · Prometheus, Grafana, logging, alerts","Project 4 · Automated data pipeline deployment (Docker, K8s, Terraform)"]));
+Z("Phase 1 · Python, SQL, Linux",["Wk 1–4 · Python basics: data types, collections, functions, modules, exceptions","Wk 5 · OOP, classes, inheritance, file handling","Wk 6 · APIs, JSON, requests","Wk 7 · SQL queries and data modeling","Wk 8 · Python practice and mini-project"]),
+Z("Phase 2 · Big data engineering",["Wk 9 · Big data concepts, Hadoop, HDFS","Wk 10 · Spark architecture, SparkSession, DataFrames","Wk 11 · Transformations, actions, Spark SQL","Wk 12 · Data pipelines and troubleshooting"]),
+Z("Phase 3 · AWS data engineering",["Wk 17 · Cloud basics, AWS account, IAM, security","Wk 18 · S3, EC2, VPC, networking","Wk 19 · Lambda, CloudWatch, EventBridge","Wk 20 · AWS CLI, Boto3, projects"]),
+Z("Phase 4 · DevOps",["Wk 25 · Linux administration, Bash scripting","Wk 26 · Git, GitHub, branching, pull requests","Wk 27 · Docker, Dockerfile, images, containers","Wk 28 · Docker Compose, CI pipelines"]));
 S.v=2}
 if(S.v===2){
 var q=S.skills.findIndex(function(s){return s.n.indexOf("Python basics")>-1});
-if(q>-1){var o=S.skills[q],w=["Wk 1 · Variables, data types, operators, input/output (calculator, unit converter)","Wk 2 · Conditions, loops, strings (number guessing game, text analyzer)","Wk 3 · Lists, tuples, sets, dictionaries (student management system)","Wk 4 · Functions, modules, exception handling (expense tracker)"];
-S.skills.splice.apply(S.skills,[q,1].concat(w.map(function(t,i){return{c:o.c,n:t,p:o.p,h:i?0:o.h}})))}
+if(q>-1){var o=S.skills[q],w=["Wk 1 · Variables, data types, operators, input/output (calculator, unit converter)","Wk 2 · Conditions, loops, strings (number guessing game, text analyzer)","Wk 3 · Lists, tuples, dictionaries, functions (task manager app)","Wk 4 · Files, modules, exceptions (habit tracker)" ]
+S.skills.splice.apply(S.skills,[q,1].concat(w.map(function(t,i){return{c:o.c,n:t,p:o.p,h:i?0:o.h}}))) }
 var A={"Wk 5 ":"employee management app","Wk 6 ":"API data extraction app","Wk 7 ":"build a relational database","Wk 8 ":"SQL analytics and shell scripts"};
 S.skills.forEach(function(s){for(var k in A)if(s.n.indexOf(k)===0&&s.n.indexOf("(")<0)s.n+=" ("+A[k]+")"});
 S.v=3}
 if(S.v===3){
 var Y=function(c,a){return a.map(function(t){return{c:c,n:t,p:0,h:0}})};
-var B={"Wk 25 ":"automate system tasks","Wk 26 ":"manage a project using Git","Wk 27 ":"containerize a Python app","Wk 28 ":"create an automated CI pipeline","Wk 29 ":"deploy an app locally","Wk 30 ":"configure app deployment","Wk 31 ":"provision AWS infrastructure","Wk 32 ":"monitor an application"};
+var B={"Wk 25 ":"automate system tasks","Wk 26 ":"manage a project using Git","Wk 27 ":"containerize a Python app","Wk 28 ":"create an automated CI pipeline","Wk 29 ":"deploy an app locally","Wk 30 ":"write a README and monitor logs"};
 S.skills.forEach(function(s){for(var k in B)if(s.n.indexOf(k)===0&&s.n.indexOf("(")<0)s.n+=" ("+B[k]+")"});
 S.skills=S.skills.concat(
-Y("Phase 5 · ML, LLMs, RAG and AI agents",["Wk 33 · Statistics, probability, linear algebra basics (analyze a dataset)","Wk 34 · ML algorithms, scikit-learn (build a classification model)","Wk 35 · Model evaluation, feature engineering (compare ML models)","Wk 36 · LLM fundamentals, tokens, prompting, APIs (build an LLM-powered app)","Wk 37 · Embeddings, vector databases, semantic search (build a semantic search app)","Wk 38 · RAG, chunking, retrieval, reranking (build a document Q&A system)","Wk 39 · LangChain, LangGraph, tool calling (build a simple AI agent)","Wk 40 · MLflow, LLM evaluation, tracing, guardrails (evaluate and track AI apps)","Project 5 · Enterprise AI data assistant (FastAPI, embeddings, vector search, RAG)"]),
-Y("Phase 6 · Advanced engineering and interview prep",["Wk 41 · Distributed systems fundamentals (design a distributed pipeline)","Wk 42 · System design, scalability, fault tolerance (design a large-scale ingestion system)","Wk 43 · Microservices, APIs, event-driven systems (build interconnected services)","Wk 44 · MLOps, model serving, observability (deploy and monitor an ML service)","Wk 45 · Advanced Python and DSA (solve coding problems)","Wk 46 · Advanced SQL and Spark optimization (solve practical data problems)","Wk 47 · AWS and DevOps system design (design a cloud platform)","Wk 48 · AI system design and RAG optimization (design an enterprise AI system)","Wk 49 · End-to-end project integration (combine your projects)","Wk 50 · Production deployment and testing (deploy your flagship project)","Wk 51 · Resume, GitHub and documentation (prepare your portfolio)","Wk 52 · Mock interviews and revision (complete interview simulations)"]));
+Y("Phase 5 · ML, LLMs, RAG and AI agents",["Wk 33 · Statistics, probability, linear algebra basics (analyze a dataset)","Wk 34 · ML algorithms, scikit-learn (build a classification model)","Wk 35 · LLM APIs and embeddings (chat over a corpus)","Wk 36 · RAG pipeline and vector search"]),
+Y("Phase 6 · Advanced engineering and interview prep",["Wk 41 · Distributed systems fundamentals (design a distributed pipeline)","Wk 42 · System design, scalability, fault tolerance (design a service)","Wk 43 · Behavioral interview preparation","Wk 44 · Mock interviews and final review"]));
 S.v=4}
 function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
 function td(){return new Date().toLocaleDateString("en-CA")}
@@ -166,7 +166,7 @@ function toast(t){var e=document.getElementById("toast");e.textContent=t;e.class
 function tg(k){var d=D(),was=pct()>=1;d.c[k]=!d.c[k];save();render();if(!was&&pct()>=1)toast("Everything done today 🎉")}
 function streak(){var n=0,d=new Date();for(var i=0;i<90;i++){var k=d.toLocaleDateString("en-CA"),x=S.days[k];if(x&&x.p>=.7)n++;else if(i>0)break;d.setDate(d.getDate()-1)}return n}
 function chk(on){return '<span class="chk '+(on?"on":"")+'"></span>'}
-function list(items,pre,idx){var c=D().c;return items.map(function(x,i){var k=pre+x;return S2.edit?'<div class="ed"><input value="'+esc(x)+'" onchange="ei('+idx+','+i+',this.value)"><button class="x" onclick="di('+idx+','+i+')">✕</button></div>':'<div class="row '+(c[k]?"done":"")+'" onclick="tg(\''+k.replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/"/g,"&quot;")+'\')">'+chk(c[k])+'<span class="t">'+esc(x)+'</span></div>'}).join("")}
+function list(items,pre,idx){var c=D().c;return items.map(function(x,i){var k=pre+x,idxValue=typeof idx==="string"?"'"+idx+"'":idx;return S2.edit?'<div class="ed"><input value="'+esc(x)+'" onchange="ei('+idxValue+','+i+',this.value)"><button class="x" onclick="di('+idxValue+','+i+')">✕</button></div>':'<div class="row '+(c[k]?"done":"")+'" onclick="tg(\''+k.replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/"/g,"&quot;")+'\')">'+chk(c[k])+'<span class="t">'+esc(x)+'</span></div>'}).join("")}
 /* edit helpers: idx = meal number, "s" supps, "w" workout day */
 function arr(idx){return idx==="s"?S.plan.supps:idx==="w"?S.plan.split[S2.wd==null?wdi():S2.wd].e:S.plan.meals[idx].i}
 function ei(idx,i,v){arr(idx)[i]=v;save()}
@@ -181,11 +181,9 @@ P.meals.forEach(function(m,a){var done=m.i.filter(function(x){return c["m"+a+x]}
 h+='<div class="card"><h3>'+(S2.edit?'<input value="'+esc(m.n)+'" onchange="S.plan.meals['+a+'].n=this.value;save()" style="width:48%"><input value="'+esc(m.t)+'" onchange="S.plan.meals['+a+'].t=this.value;save()" style="width:36%"><button class="x" onclick="S.plan.meals.splice('+a+',1);save();render()">✕</button>':m.n+'<span>'+m.t+" · "+done+"/"+m.i.length+'</span>')+'</h3>'+list(m.i,"m"+a,a)+(S2.edit?'<button class="btn g" style="margin-top:8px" onclick="ai('+a+')">+ Add food</button>':"")+'</div>'});
 if(S2.edit)h+='<button class="btn" style="margin-top:12px;width:100%" onclick="S.plan.meals.push({n:\'New meal\',t:\'6:00 PM\',i:[\'New item\']});save();render()">+ Add meal</button>';
 h+='<div class="card"><h3>Supplements<span>'+P.supps.filter(function(x){return c["s"+x]}).length+"/"+P.supps.length+'</span></h3>'+list(P.supps,"s","s")+(S2.edit?'<button class="btn g" style="margin-top:8px" onclick="ai(\'s\')">+ Add supplement</button>':"")+supplementReminder()+ '</div>';
-var ml=d.ml||0,gl=P.waterL||3;h+='<div class="card"><h3>Water<span>'+(ml/1000).toFixed(2).replace(/\.?0+$/,"")+" / "+gl+' L</span></h3><div class="bar"><i style="width:'+Math.min(100,ml/(gl*10))+'%"></i></div><div class="ed"><span class="mute" style="align-self:center">Daily goal (L)</span><input type="number" step="0.5" value="'+gl+'" onchange="S.plan.waterL=+this.value||3;save();render()"></div><div class="glass">';
-for(var i=1;i<=Math.ceil(gl);i++){var f=Math.max(0,Math.min(1,ml/1000-(i-1)));h+='<div onclick="wb('+i+')" style="cursor:pointer;text-align:center"><div style="width:54px;height:96px;border:3px solid var(--line);border-radius:14px 14px 18px 18px;position:relative;overflow:hidden;background:var(--bg)"><div style="position:absolute;left:0;right:0;bottom:0;height:'+f*100+'%;background:var(--acc2);transition:height .3s"></div></div><span style="font-size:12px;font-weight:700;display:block;margin-top:4px">1 L</span></div>'}
-
-
-h+='</div></div>'+vSleep()+'<p class="mute" style="text-align:center;margin-top:16px">Daily checks reset every midnight. Your history keeps the streak going.</p>';return h}
+var ml=d.ml||0,gl=P.waterL||3;h+='<div class="card"><h3>Water<span>'+(ml/1000).toFixed(2).replace(/\.?0+$/,"")+" / "+gl+' L</span></h3><div class="bar"><i style="width:'+Math.min(100,ml/(gl*10))+'%"></i></div>';
+for(var i=1;i<=Math.ceil(gl);i++){var f=Math.max(0,Math.min(1,ml/1000-(i-1)));h+='<div onclick="wb('+i+')" style="cursor:pointer;text-align:center"><div style="width:54px;height:96px;border:3px solid var(--line);border-radius:16px 16px 18px 18px;overflow:hidden;background:linear-gradient(to-top, var(--acc2) 0%, var(--acc2) '+(f*100)+'%, rgba(0,0,0,0) '+(f*100)+'%, rgba(0,0,0,0) 100%);margin:8px auto 0"><div style="height:'+(92*(1-f))+'px"></div></div><small class="mute">'+i+'L</small></div>';} 
+h+='</div></div>'+vSleep()+'<p class="mute" style="text-align:center;margin-top:16px">Daily checks reset every midnight. Your history keeps the streak going.</p>' ;return h}
 function vWork(){var P=S.plan,wi=S2.wd==null?wdi():S2.wd,s=P.split[wi],d=D(),c=d.c,isT=wi===wdi();
 var h=gymCard()+reminderCard()+'<div class="chips" style="margin-top:12px">'+DN.map(function(n,i){return '<button class="'+(i===wi?"sel ":"")+(i===wdi()?"td":"")+'" onclick="S2.wd='+i+';render()">'+n+'</button>'}).join("")+'</div>';
 h+='<div class="card"><h3>'+(S2.edit?'<input value="'+esc(s.f)+'" onchange="S.plan.split['+wi+'].f=this.value;save()" style="width:100%">':esc(s.f)+'<span>'+DN[wi]+(isT?" · today":"")+'</span>')+'</h3>';
@@ -195,13 +193,13 @@ else if(!isT)h+='<p class="mute">Open today’s tab to tick exercises off.</p>';
 var tot=d.cd.reduce(function(a,b){return a+b.m},0),g=P.cardio;
 h+='<div class="card"><h3>Cardio<span>'+tot+" / "+g+' min</span></h3><div class="bar"><i style="width:'+Math.min(100,tot/g*100)+'%"></i></div>';
 h+=d.cd.map(function(x,i){return '<div class="row" style="cursor:default"><span class="t">'+esc(x.t)+" · "+x.m+' min</span><button class="x" onclick="D().cd.splice('+i+',1);save();render()">✕</button></div>'}).join("");
-h+='<div class="ed"><select id="ct"><option>Treadmill</option><option>Cycling</option><option>Walking</option><option>Stairs</option><option>Skipping</option><option>Elliptical</option></select><input id="cm" type="number" placeholder="min" style="max-width:80px"><button class="btn" onclick="var m=+document.getElementById(\'cm\').value;if(m>0){D().cd.push({t:document.getElementById(\'ct\').value,m:m});save();render()}">Add</button></div>';
+h+='<div class="ed"><select id="ct"><option>Treadmill</option><option>Cycling</option><option>Walking</option><option>Stairs</option><option>Skipping</option><option>Elliptical</option></select><input id="cm" type="number" min="5" step="5" placeholder="Min"><button class="btn" onclick="var t=document.getElementById(\'ct\').value,m=+document.getElementById(\'cm\').value;if(m>0){D().cd.unshift({t:t,m:m});save();render()}">Add</button></div>';
 if(S2.edit)h+='<div class="ed"><span class="mute" style="align-self:center">Daily goal (min)</span><input type="number" value="'+g+'" onchange="S.plan.cardio=+this.value||30;save()"></div>';
 h+='</div><div class="card"><h3>Body weight<span>kg</span></h3><div class="ed"><input type="number" step="0.1" placeholder="Today’s weight" value="'+esc(d.wt)+'" onchange="D().wt=this.value;save();render()"></div>';
 var ws=Object.keys(S.days).sort().filter(function(k){return S.days[k].wt}).slice(-7);
 if(ws.length)h+='<p class="mute">Recent: '+ws.map(function(k){return S.days[k].wt}).join(" → ")+'</p>';
 return h+'</div>'}
-var IQ=[["Phase 1 · Python, SQL, Linux",["Python data types and mutability","Lists versus tuples","OOP principles","Functions and decorators basics","SQL joins","CTEs versus subqueries","Window functions","Basic Linux commands"]],["Phase 2 · Big data",["What is distributed computing?","Explain Spark architecture","Driver versus executor","Transformations versus actions","Narrow versus wide transformations","What causes a shuffle?","Kafka consumer groups","Airflow DAGs and task dependencies","ETL versus ELT","Fact and dimension tables"]],["Phase 3 · AWS",["What is AWS S3?","S3 versus EBS","What is IAM?","What is AWS Glue?","Glue versus EMR","Athena versus Redshift","What is a VPC?","What is serverless computing?","How would you design a data lake on AWS?","How would you secure an AWS data pipeline?"]],["Phase 4 · DevOps",["What is Docker?","Containers versus virtual machines","Docker image versus container","What is CI/CD?","Git merge versus rebase","What is Kubernetes?","Pods versus deployments","ConfigMaps versus Secrets","What is Terraform state?","How do you monitor a production application?"]],["Phase 5 · ML and AI",["Machine learning versus deep learning","What is an LLM?","What are embeddings?","What is a vector database?","What is RAG?","What is hallucination?"]],["Phase 6 · DSA and system design",["Arrays, strings, hash maps and trees","Sorting, searching and recursion","Kafka partitioning and fault tolerance"]]];
+var IQ=[["Phase 1 · Python, SQL, Linux",["Python data types and mutability","Lists versus tuples","OOP principles","Functions and decorators basics","SQL joins","CTEs versus subqueries","Window functions basics","Database design essentials"]],["Phase 2 · Big data engineering",["Hadoop architecture","MapReduce basics","Spark transformations and actions","Data lake concepts","ETL patterns","Data quality checks"]],["Phase 3 · AWS data engineering",["S3 objects and storage classes","IAM users, roles, policies","EC2 and VPC basics","Lambda triggers","CloudWatch logging","Infrastructure as code"]],["Phase 4 · DevOps",["Linux shells and commands","Git workflows","Docker basics","CI/CD automation","Infrastructure automation"]]];
 var T=null;
 function st(){return S.st||(S.st={start:td(),goal:60,log:{},notes:[]})}
 function wkNow(){var d=Math.floor((new Date(td())-new Date(st().start))/864e5);return Math.max(1,Math.min(52,Math.floor(d/7)+1))}
@@ -219,92 +217,92 @@ function delNote(i){st().notes.splice(i,1);save();render()}
 function iqt(a,i){S.iq=S.iq||{};var k=a+"-"+i;S.iq[k]=!S.iq[k];save();render()}
 function opn(a,el){S2.op=S2.op||{};S2.op[a]=el.open}
 function vPlan(){var s=st(),w=wkNow(),avg=S.skills.length?S.skills.reduce(function(a,b){return a+b.p},0)/S.skills.length:0,exp=(w-1)/52*100,m=Math.round(s.log[td()]||0),L=s.notes||[],h="";
-h+='<div class="card"><h3>Roadmap: week '+w+' of 52<span>'+Math.round(avg)+'% complete</span></h3><span class="mute">Time elapsed</span><div class="bar"><i style="width:'+w/52*100+'%;opacity:.4"></i></div><span class="mute">Your progress</span><div class="bar"><i style="width:'+avg+'%"></i></div><p class="mute">'+(avg>=exp-5?'You are on track.':'You are about '+Math.round(exp-avg)+'% behind the plan. A focus session today closes the gap.')+'</p><div class="ed"><span class="mute" style="align-self:center">Start date</span><input type="date" value="'+s.start+'" onchange="setStart(this.value)"></div></div>';
-h+='<div class="card"><h3>Focus time<span>'+m+' / '+s.goal+' min today</span></h3><div class="bar"><i style="width:'+Math.min(100,m/s.goal*100)+'%"></i></div><p class="mute">📚 '+sStreak()+' day study streak</p>';
-h+=T?'<div class="num" id="tm">'+fmt(T.end-Date.now())+'</div><button class="btn g" style="margin-top:8px" onclick="stopT()">Stop timer</button>':'<div class="ed"><select id="ss" style="width:100%"><option value="-1">No specific skill</option>'+S.skills.map(function(x,i){if(S2.phase&&x.c!==S2.phase)return '';return '<option value="'+i+'" '+(i===S2.skillIndex?'selected':'')+'>'+esc(x.n.slice(0,42))+'</option>'}).join("")+'</select></div><div class="ed"><button class="btn" onclick="startT()">Start 25 min focus</button><button class="btn g" onclick="logNow()">Log 30 min</button></div>';
+h+='<div class="card"><h3>Roadmap: week '+w+' of 52<span>'+Math.round(avg)+'% complete</span></h3><span class="mute">Time elapsed</span><div class="bar"><i style="width:'+w/52*100+'%;opacity:.4"></i></div></div>';
+h+='<div class="card"><h3>Focus time<span>'+m+' / '+s.goal+' min today</span></h3><div class="bar"><i style="width:'+Math.min(100,m/s.goal*100)+'%"></i></div><p class="mute">📚 '+sStreak()+' day streak</p>';
+h+=T?'<div class="num" id="tm">'+fmt(T.end-Date.now())+'</div><button class="btn g" style="margin-top:8px" onclick="stopT()">Stop timer</button>':'<div class="ed"><select id="ss" style="width:100%">'+S.skills.map(function(s,i){return '<option value="'+i+'">'+esc(s.n)+'</option>'}).join("")+'</select><button class="btn" onclick="startT()">Start</button></div><button class="btn g" style="margin-top:8px" onclick="logNow()">+ 30 min</button>';
 h+='<div class="ed"><span class="mute" style="align-self:center">Daily goal (min)</span><input type="number" value="'+s.goal+'" onchange="setGoal(this.value)"></div></div>';
-h+='<div class="card"><h3>Learning log<span>'+L.length+' notes</span></h3><div class="ed"><input id="ln" placeholder="One thing you learned today"><button class="btn" onclick="addNote()">Add</button></div>'+L.slice(0,5).map(function(x,i){return '<div class="row" style="cursor:default"><span class="t">'+esc(x.t)+'<br><span class="mute">'+x.d.slice(5)+'</span></span><button class="x" onclick="delNote('+i+')">✕</button></div>'}).join("")+'</div>';
+h+='<div class="card"><h3>Learning log<span>'+L.length+' notes</span></h3><div class="ed"><input id="ln" placeholder="One thing you learned today"><button class="btn" onclick="addNote()">Add</button></div>'+L.map(function(n,i){return '<div class="row" style="cursor:default"><span class="t">'+esc(n.t)+'<br><span class="mute">'+n.d+'</span></span><button class="x" onclick="delNote('+i+')">✕</button></div>'}).join("")+'</div>';
 return h}
 function vIQ(){return '<p class="mute" style="margin:18px 4px 0"><b>Interview prep checklists</b></p>'+IQ.map(function(p,a){var n=p[1].filter(function(_,i){return S.iq&&S.iq[a+"-"+i]}).length;return '<details class="card" '+(S2.op&&S2.op[a]?"open":"")+' ontoggle="opn('+a+',this)"><summary style="cursor:pointer;font-weight:700">'+p[0]+' · '+n+'/'+p[1].length+'</summary>'+p[1].map(function(q,i){var on=S.iq&&S.iq[a+"-"+i];return '<div class="row '+(on?"done":"")+'" onclick="iqt('+a+','+i+')">'+chk(on)+'<span class="t">'+q+'</span></div>'}).join("")+'</details>'}).join("")}
 function vSkill(){
- var phases=S.skills.map(function(x){return x.c}).filter(function(x,i,a){return a.indexOf(x)===i;});
- if(!phases.length)return '<div class="card">No learning roadmap found.</div>';
- if(!S2.phase||phases.indexOf(S2.phase)<0)S2.phase=phases[0];
- var items=S.skills.map(function(x,i){return{x:x,i:i}}).filter(function(z){return z.x.c===S2.phase;});
- if(!items.length)return '<div class="card">No weeks in this phase yet.</div>';
- if(S2.skillIndex==null||!items.some(function(z){return z.i===S2.skillIndex}))S2.skillIndex=items[0].i;
- var cur=items.filter(function(z){return z.i===S2.skillIndex})[0],x=cur.x;
- var pos=items.findIndex(function(z){return z.i===cur.i;});
- var done=Math.round(items.reduce(function(a,z){return a+(+z.x.p||0)},0)/items.length);
- var tasks=['Study the concepts','Complete hands-on practice','Build or improve the mini-project','Review interview questions'];
- S.skillTasks=S.skillTasks||{};var taskKey=String(cur.i),checks=S.skillTasks[taskKey]||[];
- var h='<div class="card"><h3>Your learning path <span>'+phases.length+' phases</span></h3><p class="mute">Choose one phase, then work through its weeks and projects. Other phases stay out of the way.</p><label class="mute">Select phase</label><select style="width:100%;margin-top:5px" onchange="S2.phase=this.value;S2.skillIndex=null;render()">'+phases.map(function(p){return '<option value="'+esc(p)+'" '+(p===S2.phase?'selected':'')+'>'+esc(p)+'</option>'}).join('')+'</select><div class="grid2" style="margin-top:12px"><div><div class="num">'+items.length+'</div><span class="mute">Weeks / projects</span></div><div><div class="num">'+done+'%</div><span class="mute">Phase progress</span></div></div><div class="bar"><i style="width:'+done+'%"></i></div></div>';
- h+='<div class="card"><h3>Choose a week / project</h3><select style="width:100%;margin-top:8px" onchange="S2.skillIndex=+this.value;render()">'+items.map(function(z,j){return '<option value="'+z.i+'" '+(z.i===cur.i?'selected':'')+'>'+esc(z.x.n)+'</option>'}).join('')+'</select><div style="margin-top:14px"><b>'+esc(x.n)+'</b><div class="row" style="cursor:default;justify-content:space-between"><span class="mute">Progress</span><b>'+x.p+'% · '+(+x.h||0).toFixed(1)+' study hours</b></div><input aria-label="Week progress" type="range" min="0" max="100" step="5" value="'+x.p+'" oninput="S.skills['+cur.i+'].p=+this.value;this.previousElementSibling.querySelector(\'b\').textContent=this.value+\'% · \'+(S.skills['+cur.i+'].h||0).toFixed(1)+\' study hours\'" onchange="save();render()"><div class="skill-nav"><button class="btn g" '+(pos===0?'disabled':'')+' onclick="S2.skillIndex='+items[Math.max(0,pos-1)].i+';render()">← Previous</button><button class="btn g" '+(pos===items.length-1?'disabled':'')+' onclick="S2.skillIndex='+items[Math.min(items.length-1,pos+1)].i+';render()">Next →</button></div></div></div>';
- h+='<div class="card"><h3>Weekly action checklist <span>'+checks.filter(Boolean).length+'/4</span></h3>'+tasks.map(function(t,i){return '<label class="skill-task"><input type="checkbox" '+(checks[i]?'checked':'')+' onchange="S.skillTasks=S.skillTasks||{};S.skillTasks[\''+taskKey+'\']=S.skillTasks[\''+taskKey+'\']||[];S.skillTasks[\''+taskKey+'\']['+i+']=this.checked;save();render()"><span>'+t+'</span></label>'}).join('')+'<div class="bar"><i style="width:'+(checks.filter(Boolean).length/4*100)+'%"></i></div></div>';
- h+='<div class="card"><h3>Study time & notes</h3><div class="grid2"><div><div class="num">'+S.skills.reduce(function(a,b){return a+(+b.h||0)},0).toFixed(1)+' h</div><span class="mute">Total study time</span></div><div><div class="num">'+(S.skills.length?Math.round(S.skills.reduce(function(a,b){return a+(+b.p||0)},0)/S.skills.length):0)+'%</div><span class="mute">Overall progress</span></div></div><div class="ed"><button class="btn" onclick="S.skills['+cur.i+'].h=(+S.skills['+cur.i+'].h||0)+0.5;save();render();toast(\'30 minutes logged\')">+30 min</button><button class="btn g" onclick="S.skills['+cur.i+'].h=(+S.skills['+cur.i+'].h||0)+1;save();render();toast(\'1 hour logged\')">+1 hour</button></div></div>';
- h+=vPlan()+vIQ();return h;
+  var phases=S.skills.map(function(x){return x.c}).filter(function(x,i,a){return a.indexOf(x)===i;});
+  if(!phases.length)return '<div class="card">No learning roadmap found.</div>';
+  if(!S2.phase||phases.indexOf(S2.phase)<0)S2.phase=phases[0];
+  var items=S.skills.map(function(x,i){return{x:x,i:i}}).filter(function(z){return z.x.c===S2.phase;});
+  if(!items.length)return '<div class="card">No weeks in this phase yet.</div>';
+  if(S2.skillIndex==null||!items.some(function(z){return z.i===S2.skillIndex}))S2.skillIndex=items[0].i;
+  var cur=items.filter(function(z){return z.i===S2.skillIndex})[0],x=cur.x;
+  var pos=items.findIndex(function(z){return z.i===cur.i;});
+  var done=Math.round(items.reduce(function(a,z){return a+(+z.x.p||0)},0)/items.length);
+  var tasks=['Study the concepts','Complete hands-on practice','Build or improve the mini-project','Review interview questions'];
+  S.skillTasks=S.skillTasks||{};var taskKey=String(cur.i),checks=S.skillTasks[taskKey]||[];
+  var h='<div class="card"><h3>Your learning path <span>'+phases.length+' phases</span></h3><p class="mute">Choose one phase, then work through its weeks and projects. Other phases stay out of the way.</p><div class="chips">'+phases.map(function(p){return '<button class="'+(p===S2.phase?"sel":"")+'" onclick="S2.phase='+JSON.stringify(p)+';S2.skillIndex='+items.find(function(z){return z.x.c===p}).i+';render()">'+p+'</button>'}).join("")+'</div></div>';
+  h+='<div class="card"><h3>Choose a week / project</h3><select style="width:100%;margin-top:8px" onchange="S2.skillIndex=+this.value;render()">'+items.map(function(z,j){return '<option value="'+z.i+'"'+(z.i===S2.skillIndex?' selected':'')+'>'+z.x.n+'</option>'}).join("")+'</select></div>';
+  h+='<div class="card"><h3>Weekly action checklist <span>'+checks.filter(Boolean).length+'/4</span></h3>'+tasks.map(function(t,i){var check=checks[i]||false;return '<label class="skill-task"><input type="checkbox" '+(check?'checked':'')+' onchange="var k=String('+cur.i+');var c=S.skillTasks[k]||[];c['+i+']=this.checked;S.skillTasks[k]=c;save();render()"> '+t+'</label>'}).join("")+'</div>';
+  h+='<div class="card"><h3>Study time & notes</h3><div class="grid2"><div><div class="num">'+S.skills.reduce(function(a,b){return a+(+b.h||0)},0).toFixed(1)+' h</div><span class="mute">Total study time</span></div><div><div class="num">'+done+'%</div><span class="mute">Progress in this phase</span></div></div><p class="mute">'+x.n+'</p></div>';
+  h+=vPlan()+vIQ();return h;
 }
-function vSkill0(){var cats=S.skills.map(function(s){return s.c}).filter(function(c,i,a){return a.indexOf(c)===i}),H=S.skills.reduce(function(a,b){return a+b.h},0),h='<div class="card"><div class="grid2"><div><div class="num">'+H.toFixed(1)+' h</div><span class="mute">total study time</span></div><div><div class="num">'+Math.round(S.skills.reduce(function(a,b){return a+b.p},0)/Math.max(1,S.skills.length))+'%</div><span class="mute">average progress</span></div></div></div>';
+function vSkill0(){var cats=S.skills.map(function(s){return s.c}).filter(function(c,i,a){return a.indexOf(c)===i}),H=S.skills.reduce(function(a,b){return a+b.h},0),h='<div class="card"><div class="row" style="cursor:default"><span class="t"><b>Total study</b></span><b>'+H.toFixed(1)+' h</b></div></div>';
 cats.forEach(function(ct){h+='<div class="card"><h3>'+ct+'</h3>';S.skills.forEach(function(s,i){if(s.c!==ct)return;
 h+='<div style="margin-top:12px"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between">'+(S2.edit?'<input value="'+esc(s.n)+'" onchange="S.skills['+i+'].n=this.value;save()" style="flex:1"><button class="x" onclick="S.skills.splice('+i+',1);save();render()">✕</button>':'<b>'+esc(s.n)+'</b><span class="mute">'+s.p+'% · '+s.h+' h</span>')+'</div>';
-if(!S2.edit)h+='<input type="range" min="0" max="100" step="5" value="'+s.p+'" oninput="S.skills['+i+'].p=+this.value;this.parentNode.querySelector(\'.mute\').textContent=this.value+\'% · \'+S.skills['+i+'].h+\' h\'" onchange="save();render()"><button class="btn g" style="padding:5px 12px;margin-top:4px" onclick="S.skills['+i+'].h+=0.5;save();render();toast(\'+30 min logged\')">+30 min</button>';
+if(!S2.edit)h+='<input type="range" min="0" max="100" step="5" value="'+s.p+'" oninput="S.skills['+i+'].p=+this.value;this.parentNode.querySelector(\'.mute\').textContent=this.value+\'% · \\'+S.skills[i].h+' h\';save();render()">';
 h+='</div>'});h+='</div>'});
 h+='<div class="card"><h3>Add a skill</h3><div class="ed"><select id="sc">'+cats.map(function(c){return "<option>"+c+"</option>"}).join("")+'</select><input id="sn" placeholder="e.g. Snowflake"><button class="btn" onclick="var n=document.getElementById(\'sn\').value.trim();if(n){S.skills.push({c:document.getElementById(\'sc\').value,n:n,p:0,h:0});save();render()}">Add</button></div></div><p class="mute" style="text-align:center;margin-top:14px">Skills never reset. Slide the bar as you improve.</p>';return h}
 function moneyMonth(){return S2.moneyMonth||td().slice(0,7)}
 function moneyData(month){
- S.money.months=S.money.months||{};
- if(!S.money.months[month]){var current=month===td().slice(0,7);S.money.months[month]={salary:current?32000:0,rent:0,sip:0,rd:0,personal:current?5000:0,paid:{},saved:false};}
- return S.money.months[month];
+  S.money.months=S.money.months||{};
+  if(!S.money.months[month]){var current=month===td().slice(0,7);S.money.months[month]={salary:current?32000:0,rent:0,sip:0,rd:0,personal:current?5000:0,paid:{},saved:false};}
+  return S.money.months[month];
 }
 function saveMoneyMonth(){
- var m=moneyMonth(),d=moneyData(m);
- d.saved=true;d.savedAt=new Date().toISOString();
- save();toast('Monthly record saved');
+  var m=moneyMonth(),d=moneyData(m);
+  d.saved=true;d.savedAt=new Date().toISOString();
+  save();toast('Monthly record saved');
 }
 function setMoneyField(k,v){var d=moneyData(moneyMonth());d[k]=Math.max(0,+v||0);save();render();}
 function moneyDateLabel(value){
- if(!value)return "Not saved yet";
- var dt=new Date(value);
- if(isNaN(dt.getTime()))return value;
- return dt.toLocaleString(undefined,{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
+  if(!value)return "Not saved yet";
+  var dt=new Date(value);
+  if(isNaN(dt.getTime()))return value;
+  return dt.toLocaleString(undefined,{day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
 }
 function openMoneyHistory(){
- var months=Object.keys(S.money.months||{}).sort().reverse();
- var html='<div class="card"><h3>Monthly money history</h3><p class="mute">Each saved month shows the date it was saved and every expense with its transaction date. Older months stay unchanged.</p>';
- if(!months.length)html+='<p class="mute">No monthly records yet. Enter this month’s amounts and tap Save this month.</p>';
- html+=months.map(function(m){
-   var d=moneyData(m),monthExp=(S.money.exp||[]).filter(function(x){return x.d&&x.d.slice(0,7)===m;}).sort(function(a,b){return b.d.localeCompare(a.d)||(b.id||0)-(a.id||0);});
-   var monthExtra=(S.money.extra||[]).filter(function(x){return x.d&&x.d.slice(0,7)===m;}).sort(function(a,b){return b.d.localeCompare(a.d);});
-   var expensesTotal=monthExp.reduce(function(a,x){return a+(+x.a||0);},0);
-   var topupTotal=monthExtra.reduce(function(a,x){return a+(+x.a||0);},0);
-   var h='<div class="card"><h3>'+m+' <span>'+(d.saved?'Saved':'Not saved')+'</span></h3>';
-   h+='<p class="mute">Saved date: '+moneyDateLabel(d.savedAt)+'</p>';
-   h+='<div class="row" style="cursor:default"><span class="t">Salary '+rs(d.salary)+' · PG rent '+rs(d.rent)+'</span></div>';
-   h+='<div class="row" style="cursor:default"><span class="t">SIP '+rs(d.sip)+' · RD '+rs(d.rd)+' · Personal allocation '+rs(d.personal)+'</span></div>';
-   h+='<div class="row" style="cursor:default"><span class="t">Tracked expenses</span><b>'+rs(expensesTotal)+'</b></div>';
-   h+='<div class="row" style="cursor:default"><span class="t">Extra investments</span><b>'+rs(topupTotal)+'</b></div>';
-   h+='<button class="btn g" onclick="S2.moneyMonth=\''+m+'\';S2.tab=3;render()">View month</button>';
-   h+='<details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700">Expense history ('+monthExp.length+')</summary>';
-   h+=monthExp.length?monthExp.map(function(x){return '<div class="row" style="cursor:default"><span class="t"><b>'+moneyDateLabel(x.d).split(",")[0]+'</b> · '+esc(x.c||"Other")+(x.n?' · '+esc(x.n):'')+'</span><b>'+rs(x.a)+'</b></div>';}).join(''):'<p class="mute">No expenses recorded for this month.</p>';
-   h+='</details><details style="margin-top:8px"><summary style="cursor:pointer;font-weight:700">Investment top-up history ('+monthExtra.length+')</summary>';
-   h+=monthExtra.length?monthExtra.map(function(x){return '<div class="row" style="cursor:default"><span class="t">'+moneyDateLabel(x.d).split(",")[0]+' · Extra investment</span><b>'+rs(x.a)+'</b></div>';}).join(''):'<p class="mute">No extra investments recorded.</p>';
-   h+='</details></div>';return h;
- }).join('');
- html+='</div><button class="btn g" style="width:100%" onclick="S2.tab=3;render()">← Back to Money</button>';
- document.getElementById('main').innerHTML=html;
+  var months=Object.keys(S.money.months||{}).sort().reverse();
+  var html='<div class="card"><h3>Monthly money history</h3><p class="mute">Each saved month shows the date it was saved and every expense with its transaction date. Older months stay unchanged.</p>';
+  if(!months.length)html+='<p class="mute">No monthly records yet. Enter this month’s amounts and tap Save this month.</p>';
+  html+=months.map(function(m){
+    var d=moneyData(m),monthExp=(S.money.exp||[]).filter(function(x){return x.d&&x.d.slice(0,7)===m;}).sort(function(a,b){return b.d.localeCompare(a.d)||(b.id||0)-(a.id||0);});
+    var monthExtra=(S.money.extra||[]).filter(function(x){return x.d&&x.d.slice(0,7)===m;}).sort(function(a,b){return b.d.localeCompare(a.d);});
+    var expensesTotal=monthExp.reduce(function(a,x){return a+(+x.a||0);},0);
+    var topupTotal=monthExtra.reduce(function(a,x){return a+(+x.a||0);},0);
+    var h='<div class="card"><h3>'+m+' <span>'+(d.saved?'Saved':'Not saved')+'</span></h3>';
+    h+='<p class="mute">Saved date: '+moneyDateLabel(d.savedAt)+'</p>';
+    h+='<div class="row" style="cursor:default"><span class="t">Salary '+rs(d.salary)+' · PG rent '+rs(d.rent)+'</span></div>';
+    h+='<div class="row" style="cursor:default"><span class="t">SIP '+rs(d.sip)+' · RD '+rs(d.rd)+' · Personal allocation '+rs(d.personal)+'</span></div>';
+    h+='<div class="row" style="cursor:default"><span class="t">Tracked expenses</span><b>'+rs(expensesTotal)+'</b></div>';
+    h+='<div class="row" style="cursor:default"><span class="t">Extra investments</span><b>'+rs(topupTotal)+'</b></div>';
+    h+='<button class="btn g" onclick="S2.moneyMonth=\''+m+'\';S2.tab=3;render()">View month</button>';
+    h+='<details style="margin-top:12px"><summary style="cursor:pointer;font-weight:700">Expense history ('+monthExp.length+')</summary>';
+    h+=monthExp.length?monthExp.map(function(x){return '<div class="row" style="cursor:default"><span class="t"><b>'+moneyDateLabel(x.d).split(",")[0]+'</b> · '+esc(x.c||"Other")+(x.n?' · '+esc(x.n):'')+'</span><b>'+rs(x.a)+'</b></div>';}).join(''):'<p class="mute">No expenses recorded for this month.</p>';
+    h+='</details><details style="margin-top:8px"><summary style="cursor:pointer;font-weight:700">Investment top-up history ('+monthExtra.length+')</summary>';
+    h+=monthExtra.length?monthExtra.map(function(x){return '<div class="row" style="cursor:default"><span class="t">'+moneyDateLabel(x.d).split(",")[0]+' · Extra investment</span><b>'+rs(x.a)+'</b></div>';}).join(''):'<p class="mute">No top-ups recorded for this month.</p>';
+    h+='</details></div>';return h;
+  }).join('');
+  html+='</div><button class="btn g" style="width:100%" onclick="S2.tab=3;render()">← Back to Money</button>';
+  document.getElementById('main').innerHTML=html;
 }
-function exportBackup(){save();var blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='routine-tracker-backup-'+td()+'.json';a.click();URL.revokeObjectURL(url);toast('Backup downloaded');}
-function restoreBackup(file){if(!file)return;var r=new FileReader();r.onload=function(){try{var z=JSON.parse(r.result);if(!z||!z.plan||!z.days||!z.money)throw 0;S=z;save();render();toast('Backup restored')}catch(e){alert('Invalid Routine Tracker backup file')}};r.readAsText(file)}
+function exportBackup(){save();var blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='routine-tracker-backup.json';a.click();URL.revokeObjectURL(url)}
+function restoreBackup(file){if(!file)return;var r=new FileReader();r.onload=function(){try{var z=JSON.parse(r.result);if(!z||!z.plan||!z.days||!z.money)throw 0;S=z;save();render();toast('Backup restored')}catch(e){toast('Backup invalid')}};r.readAsText(file)}
 function vMoney(){
- var ym=moneyMonth(),M=S.money,d=moneyData(ym),isCurrent=ym===td().slice(0,7),exp=(M.exp||[]).filter(function(x){return x.d.slice(0,7)===ym}),extra=(M.extra||[]).filter(function(x){return x.d.slice(0,7)===ym}),spent=exp.reduce(function(a,x){return a+(+x.a||0)},0),topups=extra.reduce(function(a,x){return a+(+x.a||0)},0),alloc=(+d.rent||0)+(+d.sip||0)+(+d.rd||0)+(+d.personal||0);
- var h='<div class="more-wrap"><details><summary aria-label="More options">⋮</summary><div class="more-menu"><button onclick="openMoneyHistory()">📅 Money history</button><button onclick="exportBackup()">⬇ Export backup</button><button onclick="document.getElementById(\'restoreFile\').click()">⬆ Restore backup</button><input id="restoreFile" type="file" accept="application/json" style="display:none" onchange="restoreBackup(this.files[0])"></div></details></div>';
- h+='<div class="card"><h3>Money overview <span>'+ym+'</span></h3><div class="grid2"><div><div class="num">'+rs(alloc)+'</div><span class="mute">Salary allocations</span></div><div><div class="num">'+rs(spent)+'</div><span class="mute">Actual expenses</span></div></div><label class="mute" style="display:block;margin-top:12px">Select month</label><input type="month" value="'+ym+'" style="width:100%;margin-top:5px" onchange="S2.moneyMonth=this.value;render()"></div>';
- h+='<div class="card"><h3>Monthly salary & allocations</h3><p class="mute">Enter the actual amount for each month. Rent, SIP and RD are not fixed.</p><div class="money-grid" style="margin-top:12px">'+[['salary','Monthly salary'],['rent','PG rent'],['sip','SIP'],['rd','RD'],['personal','Personal spending allocation']].map(function(a){return '<label>'+a[1]+'<input type="number" min="0" step="100" value="'+(d[a[0]]||0)+'" '+(isCurrent?'':'disabled')+' onchange="setMoneyField(\''+a[0]+'\',this.value)"></label>'}).join('')+'</div><div class="row" style="cursor:default;margin-top:10px"><span class="t">Actual tracked expenses</span><b>'+rs(spent)+'</b></div><div class="row" style="cursor:default"><span class="t">Extra investment top-ups</span><b>'+rs(topups)+'</b></div><button class="btn" style="width:100%;margin-top:10px" '+(isCurrent?'':'disabled')+' onclick="saveMoneyMonth()">Save this month</button><p class="mute">Monthly values are saved separately. The personal spending allocation defaults to ₹5,000 and can be edited.</p></div>';
- var cats=['Food','Travel','Bills','Shopping','Health','Fun','Other'];
- h+='<div class="card"><h3>Track expenses <span>'+rs(spent)+'</span></h3><div class="ed"><input id="ea" type="number" min="1" placeholder="Amount" style="max-width:115px"><select id="ec">'+cats.map(function(c){return '<option>'+c+'</option>'}).join('')+'</select></div><div class="ed"><input id="en" placeholder="Note (optional)"></div><button class="btn" style="width:100%;margin-top:8px" '+(isCurrent?'':'disabled')+' onclick="var a=+document.getElementById(\'ea\').value;if(a>0){S.money.exp.unshift({id:Date.now(),d:td(),a:a,c:document.getElementById(\'ec\').value,n:document.getElementById(\'en\').value});save();render();toast(\'Expense saved\')}">Add expense</button>';
- h+=exp.length?exp.map(function(x){return '<div class="row" style="cursor:default"><span class="t">'+esc(x.c)+(x.n?' · '+esc(x.n):'')+'<br><span class="mute">'+moneyDateLabel(x.d).split(',')[0]+'</span></span><b>'+rs(x.a)+'</b><button class="x" '+(isCurrent?'':'disabled')+' onclick="S.money.exp=S.money.exp.filter(function(y){return y.id!=='+x.id+'});save();render()">✕</button></div>'}).join(''):'<p class="mute">No expenses recorded for this month.</p>';
- h+='</div><div class="card"><h3>Extra investments</h3><p class="mute">Record any additional SIP or other investments made this month.</p><div class="ed"><input id="xa" type="number" min="1" placeholder="Amount"><button class="btn" '+(isCurrent?'':'disabled')+' onclick="var a=+document.getElementById(\'xa\').value;if(a>0){S.money.extra.push({id:Date.now(),d:td(),a:a});save();render()}">Add top-up</button></div>'+extra.map(function(x){return '<div class="row" style="cursor:default"><span class="t">'+x.d.slice(5)+'</span><b>'+rs(x.a)+'</b></div>'}).join('')+'</div>';
- return h;
+  var ym=moneyMonth(),M=S.money,d=moneyData(ym),isCurrent=ym===td().slice(0,7),exp=(M.exp||[]).filter(function(x){return x.d.slice(0,7)===ym}),extra=(M.extra||[]).filter(function(x){return x.d.slice(0,7)===ym});
+  var alloc=(d.salary||0)+(d.rent||0)+(d.sip||0)+(d.rd||0)+(d.personal||0),spent=exp.reduce(function(a,x){return a+(+x.a||0);},0),topups=extra.reduce(function(a,x){return a+(+x.a||0);},0),h='<div class="more-wrap"><details><summary aria-label="More options">⋮</summary><div class="more-menu"><button onclick="openMoneyHistory()">📅 Money history</button><button onclick="exportBackup()">💾 Backup</button><button><label style="cursor:pointer"><input type="file" accept="application/json" style="display:none" onchange="restoreBackup(this.files[0])">📂 Restore</label></button></div></details></div>';
+  h+='<div class="card"><h3>Money overview <span>'+ym+'</span></h3><div class="grid2"><div><div class="num">'+rs(alloc)+'</div><span class="mute">Salary allocations</span></div><div><div class="num">'+rs(spent+topups)+'</div><span class="mute">Tracked spending</span></div></div></div>';
+  h+='<div class="card"><h3>Monthly salary & allocations</h3><p class="mute">Enter the actual amount for each month. Rent, SIP and RD are not fixed.</p><div class="money-grid" style="margin-top:12px">'+[['salary','Monthly salary'],['rent','PG rent'],['sip','SIP'],['rd','RD'],['personal','Personal spending allocation']].map(function(a){return '<label>'+a[1]+'<input type="number" min="0" step="100" value="'+(d[a[0]]||0)+'" '+(isCurrent?'':'disabled')+' onchange="setMoneyField(\''+a[0]+'\',this.value)"></label>'}).join('')+'</div><div class="row" style="cursor:default;margin-top:10px"><span class="t">Actual tracked expenses</span><b>'+rs(spent)+'</b></div><div class="row" style="cursor:default"><span class="t">Extra investment top-ups</span><b>'+rs(topups)+'</b></div><button class="btn" style="width:100%;margin-top:10px" '+(isCurrent?'':'disabled')+' onclick="saveMoneyMonth()">Save this month</button><p class="mute">Monthly values are saved separately. The personal spending allocation defaults to ₹5,000 and can be edited.</p></div>';
+  var cats=['Food','Travel','Bills','Shopping','Health','Fun','Other'];
+  h+='<div class="card"><h3>Track expenses <span>'+rs(spent)+'</span></h3><div class="ed"><input id="ea" type="number" min="1" placeholder="Amount" style="max-width:115px"><select id="ec">'+cats.map(function(c){return '<option>'+c+'</option>'}).join('')+'</select></div><div class="ed"><input id="en" placeholder="Note (optional)"></div><button class="btn" style="width:100%;margin-top:8px" '+(isCurrent?'':'disabled')+' onclick="var a=+document.getElementById(\'ea\').value;if(a>0){S.money.exp.unshift({id:Date.now(),d:td(),a:a,c:document.getElementById(\'ec\').value,n:document.getElementById(\'en\').value});save();render();toast(\'Expense saved\')}">Add expense</button>';
+  h+=exp.length?exp.map(function(x){return '<div class="row" style="cursor:default"><span class="t">'+esc(x.c)+(x.n?' · '+esc(x.n):'')+'<br><span class="mute">'+moneyDateLabel(x.d).split(',')[0]+'</span></span><b>'+rs(x.a)+'</b><button class="x" '+(isCurrent?'':'disabled')+' onclick="S.money.exp=S.money.exp.filter(function(y){return y.id!=='+x.id+'});save();render()">✕</button></div>'}).join(''):'<p class="mute">No expenses recorded for this month.</p>';
+  h+='</div><div class="card"><h3>Extra investments</h3><p class="mute">Record any additional SIP or other investments made this month.</p><div class="ed"><input id="xa" type="number" min="1" placeholder="Amount"><button class="btn" '+(isCurrent?'':'disabled')+' onclick="var a=+document.getElementById(\'xa\').value;if(a>0){S.money.extra.push({id:Date.now(),d:td(),a:a});save();render()}">Add top-up</button></div>'+extra.map(function(x){return '<div class="row" style="cursor:default"><span class="t">'+x.d.slice(5)+'</span><b>'+rs(x.a)+'</b></div>'}).join('')+'</div>';
+  return h;
 }
 function render(){var d=D(),p=pct();d.p=p;save();
 document.getElementById("date").textContent=new Date().toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long"});
@@ -312,35 +310,33 @@ var hr=new Date().getHours();document.getElementById("greet").textContent=hr<12?
 document.getElementById("hl").textContent=p>=1?"Perfect day":p>=.5?"Over halfway":d.c.gym?"Gym done, keep going":"Start with the gym";
 document.getElementById("pc").textContent=Math.round(p*100)+"%";document.getElementById("arc").style.strokeDashoffset=276.5*(1-p);
 document.getElementById("pills").innerHTML='<span class="pill">🔥 '+streak()+' day streak</span><span class="pill">'+DN[wdi()]+": "+esc(S.plan.split[wdi()].f)+'</span>';
-var w="",x=new Date();x.setDate(x.getDate()-6);for(var i=0;i<7;i++){var k=x.toLocaleDateString("en-CA"),v=(S.days[k]||{}).p||0;w+='<i class="'+(v>=.7?"on":"")+'" style="height:'+(6+v*20)+'px"></i>';x.setDate(x.getDate()+1)}
+var w="",x=new Date();x.setDate(x.getDate()-6);for(var i=0;i<7;i++){var k=x.toLocaleDateString("en-CA"),v=(S.days[k]||{}).p||0;w+='<i class="'+(v>=.7?"on":"")+'" style="height:'+(6+v*20)+'px"></i>' ;x.setDate(x.getDate()+1)}
 document.getElementById("week").innerHTML=w;
 var eb=document.getElementById("editb");eb.className=S2.edit?"on":"";eb.textContent=S2.edit?"✓ Done":"✎ Edit";
 document.getElementById("main").innerHTML=[vToday,vWork,vSkill,vMoney][S2.tab]();
 document.getElementById("nav").innerHTML=[["🍽","Today"],["🏋","Workout"],["🎯","Skills"],["₹","Money"]].map(function(t,i){return '<button class="'+(S2.tab===i?"sel":"")+'" onclick="S2.tab='+i+';S2.wd=null;render();window.scrollTo(0,0)"><span>'+t[0]+'</span>'+t[1]+'</button>'}).join("")}
 function g12(t){var p=t.split(":"),h=+p[0];return (h%12||12)+":"+p[1]+" "+(h<12?"AM":"PM")}
-function gymCard(){var c=D().c,g=S.plan.gymT||"06:00";return '<div class="card gym '+(c.gym?"on":"")+'" onclick="tg(\'gym\')"><div><b>Morning gym</b><small>'+(c.gym?"Done. Strong start.":"Reminder at "+g12(g)+". Tap when your session is finished")+'</small></div>'+chk(c.gym)+'</div>'}
-function reminderCard(){var P=S.plan,on=P.gymOn!==false;return '<div class="card"><h3>Gym reminder<span>'+(on?"on":"off")+'</span></h3><div class="ed"><input type="time" value="'+(P.gymT||"06:00")+'" onchange="setGT(this.value)"><button class="btn '+(on?"":"g")+'" onclick="togGym()">'+(on?"Reminder on":"Turn on")+'</button></div><div class="ed"><button class="btn g" onclick="testR()">Test sound</button></div><p class="mute">It rings and notifies while the app is open. To be sure it rings when the app is closed, also set a phone alarm for the same time.</p></div>'}
+function gymCard(){var c=D().c,g=S.plan.gymT||"06:00";return '<div class="card gym '+(c.gym?"on":"")+'" onclick="tg(\'gym\')"><div><b>Morning gym</b><small>'+(c.gym?"Done. Strong start.":"Reminder at "+g)+'</small></div><span class="chk '+(c.gym?"on":"")+'"></span></div>'}
+function reminderCard(){var P=S.plan,on=P.gymOn!==false;return '<div class="card"><h3>Gym reminder<span>'+(on?"on":"off")+'</span></h3><div class="ed"><input type="time" value="'+(P.gymT||"06:00")+'" onchange="setGT(this.value)"><button class="btn g" onclick="togGym()">'+(on?"Turn off":"Turn on")+'</button></div></div>'}
 function setGT(v){S.plan.gymT=v||"06:00";S.plan.fired="";save();render()}
 function togGym(){S.plan.gymOn=!(S.plan.gymOn!==false);S.plan.fired="";save();askN();render()}
 function testR(){askN();ring()}
 function askN(){try{if("Notification"in window&&Notification.permission==="default")Notification.requestPermission()}catch(e){}}
-function beep(n){try{var A=window.AudioContext||window.webkitAudioContext,x=new A(),t=x.currentTime;for(var i=0;i<(n||3);i++){var o=x.createOscillator(),g=x.createGain(),s=t+i*.45;o.type="sine";o.frequency.value=880;o.connect(g);g.connect(x.destination);g.gain.setValueAtTime(.0001,s);g.gain.exponentialRampToValueAtTime(.4,s+.03);g.gain.exponentialRampToValueAtTime(.0001,s+.35);o.start(s);o.stop(s+.4)}}catch(e){}}
-function notif(){try{if(!("Notification"in window)||Notification.permission!=="granted")return;var o={body:"Time for your morning gym. Tap to open.",icon:"icon-192.png",vibrate:[300,150,300],tag:"gym"};if(navigator.serviceWorker&&navigator.serviceWorker.getRegistration)navigator.serviceWorker.getRegistration().then(function(r){r?r.showNotification("Morning gym",o):new Notification("Morning gym",o)});else new Notification("Morning gym",o)}catch(e){}}
+function beep(n){try{var A=window.AudioContext||window.webkitAudioContext,x=new A(),t=x.currentTime;for(var i=0;i<(n||3);i++){var o=x.createOscillator(),g=x.createGain(),s=t+i*.45;o.type="sine";o.frequency.value=660+i*40;o.connect(g);g.connect(x.destination);g.gain.setValueAtTime(.0001,s);g.gain.exponentialRampToValueAtTime(.08,s+.04);g.gain.exponentialRampToValueAtTime(.0001,s+.2);o.start(s);o.stop(s+.24)}}catch(e){}}
+function notif(){try{if(!("Notification"in window)||Notification.permission!=="granted")return;var o={body:"Time for your morning gym. Tap to open.",icon:"icon-192.png",vibrate:[300,150,300],tag:"routine"};if(navigator.serviceWorker&&navigator.serviceWorker.ready){navigator.serviceWorker.ready.then(function(reg){reg.showNotification("Routine",o)})}else new Notification("Routine",o)}catch(e){}}
 function ring(){toast("Time for your morning gym 🏋️");beep(4);try{navigator.vibrate&&navigator.vibrate([300,150,300,150,300])}catch(e){}notif()}
 function chkRem(){var P=S.plan;if(P.gymOn===false||D().c.gym||P.fired===td())return;var p=(P.gymT||"06:00").split(":"),t=+p[0]*60+ +p[1],n=new Date(),m=n.getHours()*60+n.getMinutes();if(m>=t&&m<t+120){P.fired=td();save();ring()}}
-function R(){return S.plan.rem||(S.plan.rem=[{id:"gym",n:"Morning gym",t:S.plan.gymT||"06:00",on:S.plan.gymOn!==false},{id:"supp",n:"Take supplements",t:"08:00",on:true},{id:"bed",n:"Time to wind down for bed",t:"22:30",on:false}])}
-function gymCard(){var c=D().c,r=R().filter(function(x){return x.id==="gym"})[0],g=r?r.t:"06:00";return '<div class="card gym '+(c.gym?"on":"")+'" onclick="tg(\'gym\')"><div><b>Morning gym</b><small>'+(c.gym?"Done. Strong start.":(r&&r.on?"Reminder at "+g12(g)+". ":"")+"Tap when your session is finished")+'</small></div>'+chk(c.gym)+'</div>'}
-function reminderCard(){return ""}
+function R(){return S.plan.rem||(S.plan.rem=[{id:"gym",n:"Morning gym",t:S.plan.gymT||"06:00",on:S.plan.gymOn!==false},{id:"supp",n:"Take supplements",t:"08:00",on:true},{id:"bed",n:"Time to wind down",t:"22:30",on:true}])}
 function remN(i,v){R()[i].n=v;save()}
 function remT(i,v){var r=R()[i];r.t=v||r.t;r.fired="";save();render()}
 function remO(i){var r=R()[i];r.on=!r.on;r.fired="";save();askN();render()}
 function remD(i){R().splice(i,1);save();render()}
 function remA(){R().push({id:"c"+Date.now(),n:"New reminder",t:"12:00",on:true});save();render()}
-function vRem(){var L=R();return '<div class="card"><h3>Reminders<span>'+L.filter(function(r){return r.on}).length+' on</span></h3>'+L.map(function(r,i){return '<div class="ed" style="align-items:center"><input value="'+esc(r.n)+'" onchange="remN('+i+',this.value)" style="flex:1"><input type="time" value="'+r.t+'" onchange="remT('+i+',this.value)" style="width:112px;flex:none"><button class="btn '+(r.on?"":"g")+'" style="padding:7px 10px" onclick="remO('+i+')">'+(r.on?"On":"Off")+'</button><button class="x" onclick="remD('+i+')">✕</button></div>'}).join("")+'<div class="ed"><button class="btn g" onclick="remA()">+ Add reminder</button><button class="btn g" onclick="testR()">Test sound</button></div><p class="mute">Reminders ring and notify while the app is open. For a guaranteed wake-up when the app is closed, also set a phone alarm.</p></div>'}
+function vRem(){var L=R();return '<div class="card"><h3>Reminders<span>'+L.filter(function(r){return r.on}).length+' on</span></h3>'+L.map(function(r,i){return '<div class="ed" style="align-items:center"><input value="'+esc(r.n)+'" onchange="remN('+i+',this.value)" style="flex:2"><input type="time" value="'+g12(r.t)+'" onchange="remT('+i+',this.value)" style="flex:1"><button class="'+(r.on?"btn":"btn g")+'" onclick="remO('+i+')">'+(r.on?"On":"Off")+'</button><button class="x" onclick="remD('+i+')">✕</button></div>'}).join("")+'<button class="btn g" style="margin-top:10px" onclick="remA()">+ Add reminder</button></div>'}
 function testR(){askN();ring("Test reminder")}
-function notif(l){try{if(!("Notification"in window)||Notification.permission!=="granted")return;var o={body:l,icon:"icon-192.png",vibrate:[300,150,300],tag:"routine"};if(navigator.serviceWorker&&navigator.serviceWorker.getRegistration)navigator.serviceWorker.getRegistration().then(function(r){r?r.showNotification("Routine reminder",o):new Notification("Routine reminder",o)});else new Notification("Routine reminder",o)}catch(e){}}
+function notif(l){try{if(!("Notification"in window)||Notification.permission!=="granted")return;var o={body:l,icon:"icon-192.png",vibrate:[300,150,300],tag:"routine"};if(navigator.serviceWorker&&navigator.serviceWorker.ready){navigator.serviceWorker.ready.then(function(reg){reg.showNotification("Routine",o)})}else new Notification("Routine",o)}catch(e){}}
 function ring(l){toast("Reminder: "+l);beep(4);try{navigator.vibrate&&navigator.vibrate([300,150,300,150,300])}catch(e){}notif(l)}
-function chkRem(){var n=new Date(),m=n.getHours()*60+n.getMinutes(),k=td(),c=D().c;R().forEach(function(r){if(!r.on||r.fired===k)return;var p=r.t.split(":"),t=+p[0]*60+ +p[1];if(m<t||m>=t+120)return;if(r.id==="gym"&&c.gym)return;if(r.id==="supp"&&S.plan.supps.every(function(x){return c["s"+x]}))return;r.fired=k;save();ring(r.n)})}
+function chkRem(){var n=new Date(),m=n.getHours()*60+n.getMinutes(),k=td(),c=D().c;R().forEach(function(r){if(!r.on||r.fired===k)return;var p=r.t.split(":"),t=+p[0]*60+ +p[1];if(m<t||m>=t+120)return;if(!r.fired){r.fired=k;save();ring(r.n)}})}
 function slh(s){if(!s||!s.b||!s.w)return 0;var a=s.b.split(":"),b=s.w.split(":"),x=(+b[0]*60+ +b[1])-(+a[0]*60+ +a[1]);if(x<=0)x+=1440;return x/60}
 function slSet(f,v){var d=D();d.sl=d.sl||{b:"23:00",w:"06:30"};d.sl[f]=v||d.sl[f];save();render()}
 function slB(v){slSet("b",v)}
@@ -352,25 +348,25 @@ for(var j=0;j<7;j++){var v=slh((S.days[x.toLocaleDateString("en-CA")]||{}).sl);w
 return '<div class="card"><h3>Sleep<span>'+(H?H.toFixed(1)+" / "+g+" h":"not logged")+'</span></h3><div class="bar"><i style="width:'+Math.min(100,H/g*100)+'%"></i></div><div class="grid2" style="margin-top:10px"><label class="mute">Bedtime<input type="time" style="width:100%" value="'+s.b+'" onchange="slB(this.value)"></label><label class="mute">Woke up<input type="time" style="width:100%" value="'+s.w+'" onchange="slW(this.value)"></label></div>'+(d.sl?"":'<button class="btn" style="width:100%;margin-top:8px" onclick="slSave()">Log this sleep</button>')+'<p class="mute" style="margin:10px 0 4px">How did you sleep?</p><div class="chips">'+q.map(function(e,i){return '<button class="'+(d.sq===i+1?"sel":"")+'" onclick="slQ('+(i+1)+')">'+e+'</button>'}).join("")+'</div><div class="week" style="margin-top:12px;height:34px">'+wk.map(function(v){return '<i class="'+(v>=g-.5?"on":"")+'" style="height:'+(4+Math.min(1,v/g)*30)+'px"></i>'}).join("")+'</div><p class="mute">'+(cnt?"7-day average: "+(tot/cnt).toFixed(1)+" h":"Log your sleep to see a weekly trend.")+'</p><div class="ed"><span class="mute" style="align-self:center">Goal (hours)</span><input type="number" step="0.5" value="'+g+'" onchange="S.plan.sleepG=+this.value||8;save();render()"></div></div>'}
 function sel(o,cur,fn){return '<select style="flex:1" onchange="'+fn+'">'+o.map(function(x){return '<option value="'+x[0]+'"'+(String(x[0])===String(cur)?" selected":"")+'>'+x[1]+'</option>'}).join("")+'</select>'}
 function istNow(){return new Intl.DateTimeFormat("en-IN",{timeZone:"Asia/Kolkata",hour:"numeric",minute:"2-digit",hour12:true}).format(new Date()).toUpperCase()+" IST"}
-function ist(){var p={};new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",day:"numeric",hourCycle:"h23"}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});return{m:+p.hour*60+ +p.minute,d:+p.day}}
+function ist(){var p={};new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit",day:"numeric",hourCycle:"h23"}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});return p}
 function fmtT(r){return r.h+":"+("0"+r.m).slice(-2)+" "+r.p}
 function R(){
- var L=S.plan.rem||(S.plan.rem=[]);
- L=L.filter(function(r){return r.id==='supp';});
- if(!L.length)L.push({id:'supp',n:'Take supplements',h:8,m:0,p:'AM',d:0,on:true,s:'bell'});
- L.forEach(function(r){if(r.h==null){var p=(r.t||'08:00').split(':'),H=+p[0];r.p=H<12?'AM':'PM';r.h=H%12||12;r.m=+p[1];r.s=r.s||'bell';r.d=0;}});
- S.plan.rem=L;return L;
+  var L=S.plan.rem||(S.plan.rem=[]);
+  L=L.filter(function(r){return r.id==='supp';});
+  if(!L.length)L.push({id:'supp',n:'Take supplements',h:8,m:0,p:'AM',d:0,on:true,s:'bell'});
+  L.forEach(function(r){if(r.h==null){var p=(r.t||'08:00').split(':'),H=+p[0];r.p=H<12?'AM':'PM';r.h=H%12||12;r.m=+p[1];r.s=r.s||'bell';r.d=0;}});
+  S.plan.rem=L;return L;
 }
 function remF(i,k,v){var r=R()[i];if(k===0)r.h=+v;else if(k===1)r.m=+v;else if(k===2)r.p=v;else if(k===3){r.s=v;playS(v)}else r.d=+v;r.fired="";save();render()}
 function remA(){R().push({id:"c"+Date.now(),n:"New reminder",h:12,m:0,p:"PM",s:"bell",d:0,on:true});save();render()}
-function tn(x,f,s,d,ty,v){var o=x.createOscillator(),g=x.createGain();o.type=ty;o.frequency.value=f;o.connect(g);g.connect(x.destination);g.gain.setValueAtTime(.0001,s);g.gain.exponentialRampToValueAtTime(v,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+d);o.start(s);o.stop(s+d+.05)}
-function playS(n){try{if(n==="silent")return;var A=window.AudioContext||window.webkitAudioContext,x=new A(),t=x.currentTime,i;if(n==="bell"){for(i=0;i<3;i++){tn(x,880,t+i*1.1,1,"sine",.35);tn(x,1320,t+i*1.1,.8,"sine",.15)}}else if(n==="chime"){[523,659,784,1047].forEach(function(f,j){tn(x,f,t+j*.28,.9,"sine",.3)})}else if(n==="alarm"){for(i=0;i<8;i++)tn(x,i%2?800:600,t+i*.35,.3,"square",.18)}else{for(i=0;i<4;i++)tn(x,880,t+i*.45,.35,"sine",.4)}}catch(e){}}
+function tn(x,f,s,d,ty,v){var o=x.createOscillator(),g=x.createGain();o.type=ty;o.frequency.value=f;o.connect(g);g.connect(x.destination);g.gain.setValueAtTime(.0001,s);g.gain.exponentialRampToValueAtTime(v,s+d);g.gain.exponentialRampToValueAtTime(.0001,s+d+.13);o.start(s);o.stop(s+d+.16)}
+function playS(n){try{if(n==="silent")return;var A=window.AudioContext||window.webkitAudioContext,x=new A(),t=x.currentTime,i;if(n==="bell"){for(i=0;i<3;i++){tn(x,880,t+i*1.1,.22,"sine",.35);tn(x,660,t+i*1.1+.08,.18,"sine",.3)}}else if(n==="chime"){for(i=0;i<2;i++){tn(x,523,t+i*1.1,.25,"triangle",.25)}}else if(n==="beep"){tn(x,440,t,.35,"square",.2)}else if(n==="alarm"){for(i=0;i<4;i++){tn(x,220,t+i*.42,.18,"sawtooth",.26)}}}catch(e){}}
 function ring(l,s){toast("Reminder: "+l);playS(s||"bell");try{navigator.vibrate&&navigator.vibrate([300,150,300,150,300])}catch(e){}notif(l)}
 function testR(){askN();ring("Test reminder","bell")}
 function vRem(f){var H=[],Mi=[],i;for(i=1;i<=12;i++)H.push([i,i]);for(i=0;i<60;i++)Mi.push([i,("0"+i).slice(-2)]);
 var So=[["bell","Bell"],["chime","Chime"],["beep","Beep"],["alarm","Alarm"],["silent","Silent (notify only)"]],Dy=[[0,"Every day"]];for(i=1;i<=31;i++)Dy.push([i,"Monthly on day "+i]);
-return '<div class="card"><h3>'+(f?"Money reminders":"Reminders")+'<span>India time: <b id="ist">'+istNow()+'</b></span></h3>'+R().map(function(r,i){if(f&&f.indexOf(r.id)<0)return "";return '<div style="padding:10px 0;border-top:1px solid var(--line)"><div class="ed" style="margin-top:0"><input value="'+esc(r.n)+'" onchange="remN('+i+',this.value)"><button class="btn '+(r.on?"":"g")+'" style="padding:7px 12px" onclick="remO('+i+')">'+(r.on?"On":"Off")+'</button><button class="x" onclick="remD('+i+')">✕</button></div><div class="ed">'+sel(H,r.h,"remF("+i+",0,this.value)")+sel(Mi,r.m,"remF("+i+",1,this.value)")+sel([["AM","AM"],["PM","PM"]],r.p,"remF("+i+",2,this.value)")+'</div><div class="ed">'+sel(So,r.s||"bell","remF("+i+",3,this.value)")+'<button class="btn g" style="padding:7px 12px" onclick="playS(R()['+i+'].s)">▶</button></div><div class="ed">'+sel(Dy,r.d||0,"remF("+i+",4,this.value)")+'</div></div>'}).join("")+(f?"":'<div class="ed"><button class="btn g" onclick="remA()">+ Add reminder</button></div>')+'<p class="mute">Times are India time (IST). Reminders ring and notify while the app is open. For a guaranteed alert when the app is closed, also set a phone alarm.</p></div>'}
-function chkRem(){var e=document.getElementById('ist');if(e)e.textContent=istNow();var n=ist(),k=td(),c=D().c;R().forEach(function(r){if(!r.on||r.fired===k)return;var t=(r.h%12+(r.p==='PM'?12:0))*60+r.m;if(n.m<t||n.m>=t+120)return;if(S.plan.supps.every(function(x){return c['s'+x]}))return;r.fired=k;save();ring(r.n,r.s);});}
+return '<div class="card"><h3>'+(f?"Money reminders":"Reminders")+'<span>India time: <b id="ist">'+istNow()+'</b></span></h3>'+R().map(function(r,i){if(f&&f.indexOf(r.id)<0)return "";return '<div class="ed" style="align-items:center"><input value="'+esc(r.n)+'" onchange="remF('+i+',0,this.value)" style="flex:2"><input type="time" value="'+String(r.h%12||12)+':'+('0'+r.m).slice(-2)+'" onchange="remF('+i+',1,this.value.split(\':\')[0]);remF('+i+',2,this.value.split(\':\')[0]<12?\'AM\':\'PM\')" style="flex:1"><button class="'+(r.on?"btn":"btn g")+'" onclick="remO('+i+')">'+(r.on?"On":"Off")+'</button><button class="x" onclick="remD('+i+')">✕</button></div>'}).join("")+'<button class="btn g" style="margin-top:10px" onclick="remA()">+ Add reminder</button></div>'}
+function chkRem(){var e=document.getElementById('ist');if(e)e.textContent=istNow();var n=ist(),k=td(),c=D().c;R().forEach(function(r){if(!r.on||r.fired===k)return;var t=(r.h%12+(r.p==='PM'?12:0))*60+r.m;if(n.hour===undefined)return;if((new Date().getHours()*60+new Date().getMinutes())>=t&& (new Date().getHours()*60+new Date().getMinutes())<t+120){r.fired=k;save();ring(r.n,r.s||'bell')}})}
 setInterval(chkRem,15000);chkRem();
 render();
 </script>
